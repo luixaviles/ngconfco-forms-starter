@@ -2,7 +2,7 @@
   <mat-icon>add</mat-icon>
 </button>
 
-<mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+<cdk-table [dataSource]="dataSource" class="mat-elevation-z8">
   <ng-container matColumnDef="user">
     <mat-header-cell *matHeaderCellDef> User</mat-header-cell>
     <mat-cell *matCellDef="let element"> {{element.user}} </mat-cell>
@@ -33,4 +33,4 @@
 
   <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
   <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
-</mat-table>
+</cdk-table>
