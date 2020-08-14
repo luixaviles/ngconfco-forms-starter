@@ -1,0 +1,36 @@
+<button mat-mini-fab color="primary">
+  <mat-icon>add</mat-icon>
+</button>
+
+<mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+  <ng-container matColumnDef="user">
+    <mat-header-cell *matHeaderCellDef> User</mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.user}} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="workshop">
+    <mat-header-cell *matHeaderCellDef> Workshop </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.workshop}} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="ticketPrice">
+    <mat-header-cell *matHeaderCellDef> Ticket Price </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.ticketPrice}} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="url">
+    <mat-header-cell *matHeaderCellDef> Url </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.url}} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="action">
+    <mat-header-cell *matHeaderCellDef> Action </mat-header-cell>
+    <mat-cell *matCellDef="let element">
+      <button mat-button (click)="editEntry(element)">Edit</button>
+      <button mat-button (click)="deleteEntry(element)">Delete</button>
+    </mat-cell>
+  </ng-container>
+
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+</mat-table>
